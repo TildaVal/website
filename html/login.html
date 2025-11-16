@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Metrone Bank - Login</title>
+    <link
+      rel="shortcut icon"
+      href="/images/apple-icon.png"
+      type="image/x-icon"
+    />
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        background: linear-gradient(to right, #0047ab, #ff0000);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: #222;
+      }
+
+      .login-container {
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        width: 380px;
+        padding: 30px;
+        text-align: center;
+        transition: all 0.5s ease-in-out;
+      }
+
+      h2 {
+        color: #0047ab;
+        margin-bottom: 20px;
+      }
+
+      label {
+        font-weight: bold;
+        display: block;
+        margin-top: 10px;
+        text-align: left;
+        color: #333;
+      }
+
+      input {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        outline: none;
+        transition: border-color 0.3s;
+      }
+
+      input:focus {
+        border-color: #0047ab;
+      }
+
+      button {
+        width: 100%;
+        padding: 12px;
+        background-color: red;
+        color: white;
+        border: none;
+        border-radius: 25px;
+        margin-top: 20px;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      button:hover {
+        background-color: #b30000;
+      }
+
+      .links {
+        margin-top: 15px;
+        font-size: 0.9rem;
+      }
+
+      .links a {
+        color: #0047ab;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .links a:hover {
+        text-decoration: underline;
+      }
+
+      .dashboard {
+        display: none;
+        text-align: center;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-container" id="loginContainer">
+      <h2>Login to Your Account</h2>
+      <form id="loginForm">
+        <label for="email">Email or Username</label>
+        <input type="text" id="email" required />
+
+        <label for="password">Password</label>
+        <input type="password" id="password" required minlength="6" />
+
+        <button type="submit">Login</button>
+      </form>
+
+      <div class="links">
+        <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+        <p><a href="forgot-password.html">Forgotten password?</a></p>
+      </div>
+    </div>
+
+    <div class="dashboard" id="dashboard">
+      <h1>Welcome Back!</h1>
+      <p id="userDetails"></p>
+      <button
+        onclick="logout()"
+        style="
+          background: white;
+          color: red;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 25px;
+          font-weight: bold;
+          cursor: pointer;
+        "
+      >
+        Log Out
+      </button>
+    </div>
+
+    <script>
+      const loginForm = document.getElementById("loginForm");
+      const dashboard = document.getElementById("dashboard");
+      const loginContainer = document.getElementById("loginContainer");
+      const userDetails = document.getElementById("userDetails");
+
+      loginForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const emailInput = document.getElementById("email").value.trim();
+        const passwordInput = document.getElementById("password").value.trim();
+
+        const storedUser = JSON.parse(localStorage.getItem("MetroneUser"));
+
+        if (!storedUser) {
+          alert("No account found! Please sign up first.");
+          return;
+        }
+
+        if (
+          (emailInput === storedUser.email || emailInput === storedUser.name) &&
+          passwordInput.length >= 6
+        ) {
+          loginContainer.style.display = "none";
+          dashboard.style.display = "block";
+          document.body.style.background =
+            "linear-gradient(to right, #0047ab, red)";
+          window.location.href = "dashboard.html";
+          userDetails.innerHTML = `
+          <h2>${storedUser.name}</h2>
+          <p>Account Number: ${storedUser.accountNumber}</p>
+          <p>Account Type: ${storedUser.accountType}</p>
+        `;
+        } else {
+          alert("Incorrect email/username or password. Try again!");
+        }
+      });
+
+      function logout() {
+        dashboard.style.display = "none";
+        loginContainer.style.display = "block";
+        document.getElementById("email").value = "";
+        document.getElementById("password").value = "";
+      }
+    </script>
+  </body>
+</html>

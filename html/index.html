@@ -1,0 +1,640 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Metrone Bank</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="shortcut icon" href="/images/apple-icon.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+  <body>
+    <!--Header-->
+      <nav>
+        <ul id="nav-links">
+          <li><a href="#service">Personal</a></li>
+          <li><a href="#services">Business</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#status-intro">Service status</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="login.html" class="btn">Login</a></li>
+          <li><a href="signup.html" class="btn" id="bt">Signup</a></li>
+        </ul>
+      </nav>
+
+    <!--Hero section-->
+    <section id="home" class="hero">
+      <div id="google_translate_element" class="translator"></div>
+      <div class="logo">
+        <img src="/images/apple-icon.png"  alt="Logo">
+      </div>
+        <div  id="logo">
+          <strong id="st">ETRONE</strong> <br><span style="font-weight: bold;">BANK</span>
+        </div>
+      <div class="hero-content">
+        <h1>A new Current Account, pronto </h1>
+        <h4> With us, you can apply online in 10 minutes.<br>
+         Bank internationally, securely and easily</h4>
+        <h4>From savings to investments, we help you grow globally.</h4>
+        <a href="#services" class="btn">Get started</a>
+      </div>
+    </section>
+    <section id="service" class="service">
+      <div class="service-boxes">
+          <div class="box">
+            <h1>This is Relationship Banking <br></h1>
+We believe that relationships are important and that everyone deserves a great experience throughout their <br>
+financial journey. Our service is built upon human connection and real, long-standing relationships
+ whether it's <br> face to face, over the phone, online, or on our App.
+ <!-- Hero -->
+ <section class="her">
+   <h1>Welcome to Metrone Personal Banking</h1>
+   <p>Smart, secure, and simple ways to manage your money.</p>
+ </section>
+ <!-- Cards -->
+ <section class="cards">
+   <div class="card">
+     <div class="icon"> <i class="fas fa-piggy-bank"></i></div>
+     <h2>Personal Accounts</h2>
+     <p>From current accounts to savings and mortgages,
+       our personal banking range is designed to cover everything you need.</p>
+   </div>
+   <div class="card">
+     <div class="icon"><i class="fas fa-briefcase"></i></div>
+     <h2>Business Bank Accounts</h2>
+     <p>From straightforward bank accounts to asset finance,
+        we've got the know-how to help you with your needs.</p>
+     <button><a href="#services">Take a Look</a></button>
+   </div>
+   <div class="card">
+     <div class="icon"><i class="fas fa-shield-alt"> <img src="https://www.Metronebankonline.co.uk/globalassets/fscs-logo.png?width=185&format=webp&quality=85" alt="fscs logo"></i></div>
+     <h2>Scam Checker & FSCS</h2>
+     <p>Help protect yourself from fraudsters with our Metrone Bank Scam Checker powered by Ask Silver.
+       Your money is safe under the Financial Services Compensation Scheme.</p>
+       <button>Check now</button>
+   </div>
+ </section>
+
+ <!-- FSCS section -->
+ <section class="fscs">
+   <h2>Financial Services Compensation Scheme (FSCS)</h2>
+   <p>Your money is safe and secure with the FSCS.</p>
+   <p>Metrone Bank is proud to be part of this important protection network.</p>
+ </section>
+    <!--services-->
+    <section id="services" class="services">
+      <h2>our services</h2>
+      <div class="service-boxes">
+        <div class="box">
+          <h3>
+            International Transfers
+          </h3>
+          <p>Manage global finances easily with access to USD, EUR, GBP & more.</p>
+          <p>Send & receive money worldwide with low fees.</p>
+          <!--Hero Section-->
+          <section class="transfer-hero">
+              <h1>Secure International <br>Transfers</h1>
+              <p>Send money to any country safely and instantly. Enjoy low fees, high security, and feel real-time tracking.</p>
+          </section>
+          <!--Transfer Form Section-->
+          <section class="transfer-section">
+              <div class="transfer-container">
+                  <h2>Make an International Transfer</h2>
+                  <form id="transferForm">
+                      <label for="senderName">Full Name</label>
+                      <input type="text" id="senderName" required placeholder="Enter your full Name">
+                      <label for="accountNumber">Account Number</label>
+                      <input type="text" id="accountNumber" required placeholder="Enter your bank account number">
+                      <label for=" recipientBank">Recipient Bank</label>
+                      <input type="text" id="recipientBank" required placeholder="e.g., Barclays UK">
+                      <label for="recipientAccount">Recipient Account Number / 9785</label>
+                      <input type="text" id="recipientAccount" required placeholder="Enter recipient account or 9785">
+                      <label for="country">Destination Country</label>
+                      <select id="country" required>
+                          <option value="">Select Country</option>
+                          <option>United States</option>
+                          <option>united Kingdom</option>
+                          <option>Germany</option>
+                          <option>Australia</option>
+                          <option>Canada</option>
+                          <option>Brazil</option>
+                          <option>Argentina</option>
+                          <option>Japan</option>
+                          <option>Mexico</option>
+                          <option>China</option>
+                          <option>Other</option>
+                      </select>
+                      <label for="currency">Currency</label>
+                      <select id="currency" required>
+                          <option value="">Select Currency</option>
+                          <option>USD</option>
+                          <option>GBP</option>
+                          <option>EUR</option>
+                          <option>AUD</option>
+                          <option>JPY</option>
+                          <option>CAD</option>
+                          <option>CHF</option>
+                          <option>NZD</option>
+                      </select>
+                      <label for="amount">Amount</label>
+                      <input type="number" id="amount" required placeholder="Enter amount to transfer">
+                      <label for="purpose">Purpose of Transfer</label>
+                      <input type="text" id="purpose" placeholder="e.g., Family Support, Business Payment">
+                      <button type="submit"><a href="transfer.html">Make a transfer</a></button>
+                      <p class="security-note">All transfers are encrypted and processed under compliance with
+                          international banking standards.
+                      </p>
+                  </form>
+
+              </div>
+          </section>
+          <!--Trust Section-->
+          <section class="trust-section">
+              <h3>Trusted World wide</h3>
+              <div class="trust-badges">
+                  <img src="/images/visa&masterc.jpg" alt="Visa and Mastercard">
+                  <img src="/images/encrypt.jpg" alt="Data Encryption">
+                  <img src="/images/ISO certified.jpg" alt="ISO Certified">
+              </div>
+          </section>
+        </div>
+
+        <div class="box">
+          <link rel="stylesheet" href="/css/investment.css">
+          <h3>Investments</h3>
+          <p>Diversify your portfolio with stocks, funds and crypto.</p>
+          <p>Buy, sell & store Bitcoin and other digital assets safely.</p>
+          <section class="investments-hero">
+            <div class="hero-content">
+              <h1>Grow Your Wealth with Confidence</h1>
+              <p>Explore investment plans designed for traditional and crypto investors.</p>
+            </div>
+          </section>
+
+          <section class="plans">
+            <h2>Choose Your Investment Plan</h2>
+            <div class="plan-container">
+              <div class="plan-card">
+                <h3>Starter Plan</h3>
+                <p class="price">Min Deposit: $500</p>
+                <ul>
+                  <li>Monthly ROI: 5%</li>
+                  <li>Duration: 6 Months</li>
+                  <li>24/7 Support</li>
+                </ul>
+                <a href="invest-form.html" class="plan-btn">Invest Now</a>
+              </div>
+
+              <div class="plan-card featured">
+                <h3>Premium Plan</h3>
+                <p class="price">Min Deposit: $5,000</p>
+                <ul>
+                  <li>Monthly ROI: 8%</li>
+                  <li>Duration: 12 Months</li>
+                  <li>Dedicated Investment Advisor</li>
+                </ul>
+                <a href="invest-form.html" class="plan-btn">Invest Now</a>
+              </div>
+
+              <div class="plan-card">
+                <h3>Elite Plan</h3>
+                <p class="price">Min Deposit: $25,000</p>
+                <ul>
+                  <li>Monthly ROI: 12%</li>
+                  <li>Duration: 18 Months</li>
+                  <li>Personalized Portfolio</li>
+                </ul>
+                <a href="invest-form.html" class="plan-btn">Invest Now</a>
+              </div>
+
+              <div class="plan-card crypto">
+                <h3>Crypto Plan</h3>
+                <p class="price">Min Deposit: $1,000 (BTC/ETH/USDT)</p>
+                <ul>
+                  <li>Monthly ROI: 15%</li>
+                  <li>Duration: 6 Months</li>
+                  <li>Crypto Wallet Integration</li>
+                </ul>
+                <a href="invest-form.html" class="plan-btn">Invest Now</a>
+              </div>
+            </div>
+          </section>
+      </div>
+    </section>
+
+    <section class="why-choose">
+      <h2>Why Choose Metrone Bank for Your Business Banking?</h2>
+      <p class="intro">
+        Our expert Local Business Managers are in all our stores across the UK to help with your business banking needs, from everyday banking to securing funding and more.
+      </p>
+      <p class="intro">
+        Apply for a Business Bank Account in-store for same day account opening, in most cases.
+      </p>
+      <p class="intro">
+        Our Business Bank Account and Business Credit Card have been independently Rated Five-Stars by Moneyfacts in June 2025, for stand-out features in the marketplace.
+      </p>
+      <h3>Ways to Bank with Us</h3>
+      <p class="subtext">
+        Business banking made easy. Choose how you want to bank with us — whether that's face-to-face in one of our stores, online or in our 5-star rated App.
+      </p>
+      <div class="ways-grid">
+        <!-- Card 2 -->
+        <div class="way-card">
+          <div class="icon-circle">
+            <i class="fa-solid fa-desktop"></i>
+          </div>
+          <h4>Online Banking</h4>
+          <p>Easy to use online banking. Choose the best option for your business.</p>
+          <a href="404.html" class="btn">Online Banking Options</a>
+        </div>
+        <!-- Card 3 -->
+        <div class="way-card">
+          <div class="icon-circle">
+            <i class="fa-solid fa-mobile-screen-button"></i>
+          </div>
+          <h4>Mobile App</h4>
+          <p>The Metrone Bank App is free and available to Business Account customers. Manage your accounts on the go.</p>
+          <a href="404.html" class="btn">Download our app</a>
+        </div>
+        <!-- Card 4 -->
+        <div class="way-card">
+          <div class="icon-circle">
+            <i class="fa-solid fa-envelope-open-text"></i>
+          </div>
+          <h4>Post Office®</h4>
+          <p>Not close to a store? Access your account at a Post Office® near you.</p>
+          <a href="404.html" class="btn">Post Office Banking</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <h2>Who are we?</h2>
+      <div class="about-container">
+
+        <p>
+          We're an award-winning independent UK bank offering business, commercial, retail and private
+          banking services. Since its launching, we've been committed to doing things differently,
+          revisiting a time when banking was a lot more human. We believe a bank should be more than just a
+          place to store money; it should be your financial partner for everything life brings. <br>
+          Whether you're growing your business or managing your finances, Metrone Bank provides the support and
+          tools you need to succeed. We pride ourselves on giving customers the choice to bank however, whenever
+          and wherever they choose and build relationships with the customers and the communities we serve.
+           Our mission is to empower customers with technology-driven solutions in traditional and digital
+          finance. We are the relationships banking specialists.
+        </p>
+
+        <p>
+          Metrone Bank is a forward-thinking international institution redefining global finance.
+          We believe banking should empower lives — helping you save smarter, invest globally,
+          and transfer securely. Our hybrid model combines human expertise with digital innovation
+          to deliver seamless experiences across continents.
+        </p>
+
+        <p>
+          Whether you're a growing business, a crypto enthusiast, or an individual seeking
+          financial stability, Metrone Bank provides custom solutions that scale with your needs.
+          We're not just a bank — we're your global financial partner for the future.
+        </p>
+
+        <ul class="about-highlights">
+          <li>🌍 Licensed in multiple international jurisdictions</li>
+          <li>💳 Secure, multi-currency accounts</li>
+          <li>💰 Investment options in traditional and crypto assets</li>
+          <li>🕒 24/7 multilingual customer support</li>
+          <li>🔒 Bank-grade encryption and fraud protection</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Brand Principles Section -->
+    <section class="principles">
+      <h2>Our Brand Principles</h2>
+      <div class="grid">
+        <div class="card">
+          <div class="icon red"><span>❤️</span></div>
+          <h3>People</h3>
+          <p>We believe the best banking experiences come from genuine people who care, delivered with empathy and understanding.</p>
+        </div>
+        <div class="card">
+          <div class="icon red"><span>🤝</span></div>
+          <h3>Relationship</h3>
+          <p>We build authentic and longstanding relationships, supporting our customers through every stage of life.</p>
+        </div>
+        <div class="card">
+          <div class="icon red"><span>✨</span></div>
+          <h3>Simplicity</h3>
+          <p>We simplify banking with clear communication, easy-to-use services, and transparent products.</p>
+        </div>
+        <div class="card">
+          <div class="icon red"><span>📍</span></div>
+          <h3>Locality</h3>
+          <p>Our growing network of stores across England and Wales brings local knowledge and community engagement to your doorstep.</p>
+        </div>
+      </div>
+    </section>
+    <!-- CEO Message Section -->
+    <section class="ceo-message">
+      <div class="content">
+        <img src="/images/circle.jpg" id="circle" alt="your browser doesn't support this">
+        <p>We're placing a strong emphasis on relationship banking, especially within the SME and commercial sectors, as a focus for growth. 
+          Our dedication to building long-term customer relationships, local business knowledge, and tailored products will further enhance our direction of growth.
+        </p>
+        <h4>— Daniel Frumkin, Chief Executive Officer</h4>
+        <p>London, UK</p>
+      </div>
+    </section>
+    <!-- Awards Section -->
+    <section class="awards">
+      <div class="award-icon">🏆</div>
+      <h2>Awards & Accolades</h2>
+      <p>We've scooped a fair few prizes and honours since we opened our doors.</p>
+      <a href="award.html" class="btn">See Our Awards</a>
+    </section>
+    <!-- Security Advisory Section -->
+    <section class="security">
+      <h2>How to Recognise a Legitimate Message from Us</h2>
+      <p>With our new look, you might be concerned that some communications are not genuine. Here's how to stay safe:</p>
+
+      <details>
+        <summary>We'll never :</summary>
+        <ul>
+          <li>Direct you to a webpage requesting User IDs, Passwords, OTPs, PINs or secure info</li>
+          <li>Discuss account activity or potential fraud via email</li>
+          <li>Ask you to make payments or transfers to another account without <br>
+            verifying your identity or proper authorization.</li>
+        </ul>
+      </details>
+
+    </section>
+
+    <section id="status-intro">
+      <h2> How well are our services running?</h2>
+        <p>Check below for any planned maintenance and see if we are experiencing any technical issues.
+        If you <br>are experiencing problems logging into the Internet Banking portal, please see our
+        <a href="#">support page here.</a>
+      </p>
+    </section>
+    <section class="status-grid">
+      <div class="status-item">
+        <div class="status-icon"><span>✔</span></div>
+        <h3>Our Stores</h3>
+      </div>
+      <div class="status-item">
+        <div class="status-icon"><span>✔</span></div>
+        <h3>Online Account Opening</h3>
+      </div>
+      <div class="status-item">
+        <div class="status-icon"><span>✔</span></div>
+        <h3>Commercial Online Banking & Business Online Plus</h3>
+      </div>
+      <div class="status-item">
+        <div class="status-icon"><span>✔</span></div>
+        <h3>Personal Online Banking</h3>
+      </div>
+      <div class="status-item">
+        <div class="status-icon"><span>✔</span></div>
+        <h3>Business Telephone Banking</h3>
+      </div>
+      <div class="status-item">
+        <div class="status-icon"><span>✔</span></div>
+        <h3>Our App</h3>
+      </div>
+      <div class="status-item">
+        <div class="status-icon"><span>✔</span></div>
+        <h3>Personal Telephone Banking</h3>
+      </div>
+      <div class="status-item">
+        <div class="status-icon"><span>✔</span></div>
+        <h3>Our Debit Card</h3>
+      </div>
+      <div class="status-item">
+        <div class="status-icon"><span>✔</span></div>
+        <h3>Our ATMs</h3>
+      </div>
+      <div class="status-item">
+        <div class="status-icon"><span>✔</span></div>
+        <h3>Receiving Money</h3>
+      </div>
+    </section>
+
+    <section class="business-support#phase1">
+      <h2>Supporting our Business Customers</h2>
+      <div class="business-grid">
+        <!-- Card 1 -->
+        <div class="business-card">
+          <img src="/images/circle (2).jpg" alt="Best of British Business">
+          <h3>Best of British Business</h3>
+          <p>
+            We're featured in Business Reporter's Best of British Business campaign,
+            celebrating outstanding British companies driving excellence and contributing
+            to the UK economy.
+          </p>
+          <a href="business.html#phase1" class="btn">Read article</a>
+        </div>
+        <!-- Card 2 -->
+        <div class="business-card">
+          <img src="/images/circle (3).jpg" alt="Bridewell Pub">
+          <h3>Bridewell Pub</h3>
+          <p>
+            Fiona Hornsby decided to take the leap and become her own boss.
+            She now runs two award-winning pubs in Liverpool.
+          </p>
+          <a href="business.html#phase2" class="btn">Read Fiona's story</a>
+        </div>
+        <!-- Card 3 -->
+        <div class="business-card">
+          <img src="/images/circle (4).jpg" alt="Dr Sipra Deb">
+          <h3>Dr Sipra Deb</h3>
+          <p>
+            Dr Sipra Deb secured Recovery Loan Scheme funding to grow her childcare business.
+          </p>
+          <a href="business.html#phase3" class="btn">Read Dr Sipra's story</a>
+        </div>
+        <!-- Card 4 -->
+        <div class="business-card">
+          <img src="/images/circle (5).jpg" alt="Invoice It">
+          <h3>Invoice It</h3>
+          <p>
+            A digital tool designed to help small businesses and sole traders get paid quickly and securely.
+          </p>
+          <a href="business.html#phase4" class="btn">Find out more about Invoice It</a>
+        </div>
+        <!-- Card 5 -->
+        <div class="business-card">
+          <img src="/images/circle (1).jpg" alt="Supporting Women in Business">
+          <h3>Supporting Women in Business</h3>
+          <p>
+            Access to resources and networking opportunities for our female business community.
+          </p>
+          <a href="business.html#phase5" class="btn">More on supporting women in business</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section" style="max-width:900px;margin:60px auto;padding:20px;background:#f9f9f9;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+      <h2 style="text-align:center;color:#d00000;margin-bottom:30px;">Frequently Asked Questions</h2>
+
+      <div class="faq-container">
+
+        <div class="faq-item">
+          <button class="faq-question">How long does it take to apply for a Business Bank Account?</button>
+          <div class="faq-answer">
+            <p>You can apply online or in store. As part of the process, we'll verify your identity and business details to understand your needs. Once verified, you’ll be notified of the outcome promptly.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Do I need a business bank account if I'm self employed?</button>
+          <div class="faq-answer">
+            <p>You may not need one if you're self-employed or a sole trader, as your business isn't a separate entity. However, we recommend having one to keep your personal and business finances separate and professional.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Are business bank accounts protected?</button>
+          <div class="faq-answer">
+            <p>Yes. Deposits are protected by the Financial Services Compensation Scheme (FSCS) up to £85,000 for eligible businesses.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">How old do I have to be to open a Business Bank Account?</button>
+          <div class="faq-answer">
+            <p>All directors and shareholders must be 18 years or older.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">How do I switch to Metrone Bank?</button>
+          <div class="faq-answer">
+            <p>Switching is simple and takes up to 7 days if your annual turnover is below £6.5 million. Just visit your local store to start your account transfer.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">How do I apply as a multiple director company?</button>
+          <div class="faq-answer">
+            <p>When applying online, you'll indicate other directors and whether they should have access. Each director will receive an email to complete their section. All authorised directors can use Online Banking and receive their own debit card.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Can I get an overdraft with my business account?</button>
+          <div class="faq-answer">
+            <p>Yes, you can apply for a business overdraft by speaking with your Local Business Manager. Eligibility depends on your business profile and turnover.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Can I see my transaction history for closed accounts?</button>
+          <div class="faq-answer">
+            <p>Yes. We keep transaction records for five years after closing an account. You can request them by visiting a store or calling our support team. Note: accounts closed for fraud or inactivity over five years cannot be accessed.</p>
+          </div>
+        </div>
+
+        <h3 style="margin-top:40px;color:#0033cc;text-align:center;">Frequently Asked Questions for Existing Customers</h3>
+
+        <div class="faq-item">
+          <button class="faq-question">How can I reduce my bank charges?</button>
+          <div class="faq-answer">
+            <p>Maintain a monthly balance above £6,000 to avoid monthly fees and receive 30 free transactions. Falling below that balance will incur a small fee of £8 and £0.30 per transaction for that month.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Can I use my debit card abroad?</button>
+          <div class="faq-answer">
+            <p>Yes. Within Europe, you can use your debit card with no transaction fees. For usage outside Europe, a small fee applies for purchases and cash withdrawals.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">How do I pay in cash or deposit money?</button>
+          <div class="faq-answer">
+            <p>You can pay money into your account via electronic transfers, cheques, or by visiting your nearest store. We may ask brief questions to ensure the source of funds is safe. Business accounts can deposit up to £10,000 per day, and commercial accounts up to £20,000.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Who can pay in cash?</button>
+          <div class="faq-answer">
+            <p>Cash can be paid in by anyone named on the account, those with authority such as power of attorney, or employees depositing funds on behalf of the business using a pre-printed paying-in slip.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Can I exchange cash over the counter?</button>
+          <div class="faq-answer">
+            <p>Yes, but only if you're a Metrone Bank customer.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Contact-->
+    <section id="contact" class="contact">
+      <h2>Contact us</h2>
+      <form action="">
+        <input type="text" placeholder="Your name" required />
+        <input type="email" placeholder="Email address" required />
+        <textarea placeholder="Your message" required></textarea>
+        <button type="submit">Send message</button>
+      </form>
+    </section>
+
+    <!-- ====== FOOTER SECTION ====== -->
+    <footer class="main-footer">
+      <div class="footer-links">
+        <ul>
+          <li>Store Locator</li>
+          <li>Careers</li>
+          <li>Press</li>
+          <li>Mortgage Intermediaries</li>
+          <li>Investor Relations</li>
+          <li>Developer Site</li>
+          <li>Modern Slavery Act</li>
+          <li>Accessibility</li>
+        </ul>
+      </div>
+
+      <div class="footer-social">
+        <div class="social-icons">
+          <i class="fab fa-linkedin-in"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-youtube"></i>
+        </div>
+      </div>
+
+      <div class="footer-info">
+        <p>
+          Your eligible deposits with Metrone Bank PLC are protected up to a total of
+          £85,000 by the Financial Services Compensation Scheme, the UK's deposit
+          guarantee scheme. Any deposits you hold above the limit are unlikely to be
+          covered.
+        </p>
+
+        <p>
+          Metrone Bank PLC. Registered in England and Wales. Company number: 6419578.
+          Registered office: One Southampton Row, London, WC1B 5HA. We are authorised by
+          the Prudential Regulation Authority and regulated by the Financial Conduct
+          Authority and Prudential Regulation Authority. Metrone Bank PLC is an
+          independent UK Bank - it is not affiliated with any other bank or organisation
+          (including the Metrone newspaper or its publishers) anywhere in the world.
+          "Metronebank" is the registered trademark of Metrone Bank PLC.
+        </p>
+
+        <p class="legal-links">
+          Legal Information&nbsp; | &nbsp;Privacy&nbsp; | &nbsp;Cookie&nbsp; |
+          &nbsp;Sitemap
+        </p>
+
+        <p class="copyright">
+          © 2025 Metrone Bank. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+  </body>
+</html>

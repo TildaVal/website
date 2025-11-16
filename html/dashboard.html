@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Metrone Bank Dashboard</title>
+    <link rel="shortcut icon" href="/images/apple-icon.png" type="image/x-icon">
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        background: linear-gradient(to right, #0047ab, #ff0000);
+        color: white;
+        min-height: 100vh;
+      }
+
+      header {
+        background: white;
+        color: #0047ab;
+        padding: 15px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      }
+
+      .logout-btn {
+        background: red;
+        border: none;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      .container {
+        padding: 40px;
+        max-width: 900px;
+        margin: auto;
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .card {
+        background: white;
+        color: #222;
+        border-radius: 15px;
+        padding: 20px;
+        margin: 20px 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      }
+
+      .card h3 {
+        color: #0047ab;
+        margin-bottom: 10px;
+      }
+
+      .actions {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .action-btn {
+        background-color: #0047ab;
+        border: none;
+        color: white;
+        border-radius: 25px;
+        padding: 12px 25px;
+        margin: 10px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+
+      .action-btn:hover {
+        background-color: #002f6d;
+      }
+
+      .txn-history {
+        margin-top: 30px;
+      }
+
+      .txn-history ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .txn-history li {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 10px;
+        border-radius: 8px;
+        margin-bottom: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="/images/apple-icon.png" alt="Logo" />
+        <strong id="st">ETRONE</strong> <br /><span style="font-weight: bold"
+          >BANK</span
+        >
+      </div>
+      <button class="logout-btn" onclick="logout()">Logout</button>
+    </header>
+
+    <div class="container">
+      <h2 id="greeting"></h2>
+
+      <div class="card">
+        <h3>Account Summary</h3>
+        <p><strong>Account Holder:</strong> <span id="accName"></span></p>
+        <p><strong>Account Type:</strong> <span id="accType"></span></p>
+        <p><strong>Account Number:</strong> <span id="accNumber"></span></p>
+        <p><strong>Balance:</strong> £<span id="accBalance"></span></p>
+      </div>
+
+      <div class="actions">
+        <h3>What would you like to do today?</h3>
+        <button class="action-btn" onclick="depositFunds()">
+          Deposit Funds
+        </button>
+        <button class="action-btn" onclick="transferFunds()">
+          Transfer Funds
+        </button>
+      </div>
+
+      <div class="card txn-history">
+        <h3>Transaction History</h3>
+        <ul id="txnList"></ul>
+      </div>
+    </div>
+
+    <script src="/js/main.js"></script>
+  </body>
+</html>

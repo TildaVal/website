@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Metrone Bank - Transfer</title>
+    <link
+      rel="shortcut icon"
+      href="/images/apple-icon.png"
+      type="image/x-icon"
+    />
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(to right, #0047ab, #ff0000);
+        color: white;
+        margin: 0;
+        padding: 30px;
+      }
+
+      .transfer-container {
+        background: white;
+        color: #222;
+        padding: 25px;
+        border-radius: 15px;
+        max-width: 500px;
+        margin: auto;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      h2 {
+        text-align: center;
+        color: #0047ab;
+      }
+
+      label {
+        display: block;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+
+      input,
+      select {
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        margin-top: 5px;
+      }
+
+      button {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        background: #0047ab;
+        color: white;
+        border-radius: 25px;
+        margin-top: 20px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: #002f6d;
+      }
+
+      .back-btn {
+        background: red;
+        margin-top: 10px;
+      }
+
+      #transferHeader {
+        background: #0047ab;
+        color: white;
+        padding: 10px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="transferHeader">
+      <h3>Secure International Transfer</h3>
+      <p>
+        Welcome, <span id="userName"></span> | Balance: £<span
+          id="userBalance"
+        ></span>
+      </p>
+    </div>
+
+    <div class="transfer-container">
+      <h2>Make a Transfer</h2>
+      <form id="transferForm">
+        <label>Enter your full name</label>
+        <input type="text" id="recipient" required />
+
+        <label>Your account number</label>
+        <input type="text" id="recipient" required />
+
+        <label>Recipient Name</label>
+        <input type="text" id="recipient" required />
+
+        <label>Recipient Account Number</label>
+        <input type="text" id="recipientAcc" required />
+
+        <label for="country">Country</label>
+        <select id="country" required>
+          <option value="">Select Country</option>
+          <option>United States</option>
+          <option>united Kingdom</option>
+          <option>Germany</option>
+          <option>Australia</option>
+          <option>Canada</option>
+          <option>Brazil</option>
+          <option>Argentina</option>
+          <option>Japan</option>
+          <option>Mexico</option>
+          <option>China</option>
+          <option>Other</option>
+        </select>
+        <label for="currency">Currency</label>
+        <select id="currency" required>
+          <option value="">Select Currency</option>
+          <option>USD</option>
+          <option>GBP</option>
+          <option>EUR</option>
+          <option>AUD</option>
+          <option>JPY</option>
+          <option>CAD</option>
+          <option>CHF</option>
+          <option>NZD</option>
+        </select>
+
+        <label>Amount (£)</label>
+        <input type="number" id="amount" required />
+
+        <label>Transfer Purpose</label>
+        <input
+          type="text"
+          id="purpose"
+          placeholder="e.g. Family Support"
+          required
+        />
+
+        <button type="submit">Submit Transfer</button>
+        <button type="button" class="back-btn" onclick="goBack()">
+          Back to Dashboard
+        </button>
+      </form>
+    </div>
+
+    <!-- Transaction Success Popup -->
+    <div
+      id="txnSuccessPopup"
+      style="
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        background: #fff;
+        color: #0047ab;
+        padding: 30px 40px;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        z-index: 1000;
+        transition: transform 0.5s ease, opacity 0.5s ease;
+      "
+    >
+      <div style="font-size: 60px; color: green">✅</div>
+      <h2 id="txnMessage">Transaction Successful!</h2>
+    </div>
+
+    <script>
+      const user = JSON.parse(localStorage.getItem("MetroneUser"));
+      if (!user) {
+        alert("Session expired. Please log in again.");
+        window.location.href = "login.html";
+      }
+
+      document.getElementById("userName").textContent = user.name;
+      document.getElementById("userBalance").textContent =
+        user.balance?.toFixed(2) || "0.00";
+
+      // Move this OUTSIDE the form handler
+      function showSuccessPopup(message, redirectUrl) {
+        const popup = document.getElementById("txnSuccessPopup");
+        const msg = document.getElementById("txnMessage");
+        msg.textContent = message;
+        popup.style.display = "block";
+
+        // Animate scale
+        setTimeout(() => {
+          popup.style.transform = "translate(-50%, -50%) scale(1)";
+          popup.style.opacity = "1";
+        }, 50);
+
+        // Hide popup after 2 seconds and redirect
+        setTimeout(() => {
+          popup.style.transform = "translate(-50%, -50%) scale(0)";
+          popup.style.opacity = "0";
+          setTimeout(() => {
+            popup.style.display = "none";
+            if (redirectUrl) window.location.href = redirectUrl;
+          }, 500);
+        }, 2000);
+      }
+
+      const form = document.getElementById("transferForm");
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const recipient = document.getElementById("recipient").value.trim();
+        const recipientAcc = document
+          .getElementById("recipientAcc")
+          .value.trim();
+        const amount = parseFloat(document.getElementById("amount").value);
+        const purpose = document.getElementById("purpose").value.trim();
+
+        if (
+          !recipient ||
+          !recipientAcc ||
+          isNaN(amount) ||
+          amount <= 0 ||
+          !purpose
+        )
+          return alert("Please fill all fields correctly.");
+
+        if ((user.balance || 0) < amount)
+          return alert("Insufficient balance for this transfer.");
+
+        // Deduct balance and record transaction
+        user.balance -= amount;
+        const txn = `📤 Transferred £${amount.toFixed(
+          2
+        )} to ${recipient} (${recipientAcc}) on ${new Date().toLocaleString()} — ${purpose}`;
+        user.transactions = user.transactions || [];
+        user.transactions.unshift(txn);
+
+        localStorage.setItem("MetroneUser", JSON.stringify(user));
+
+        // Show popup and redirect after 2 seconds
+        showSuccessPopup("Transfer Successful!", "dashboard.html");
+      });
+
+      function goBack() {
+        window.location.href = "dashboard.html";
+      }
+    </script>
+  </body>
+</html>

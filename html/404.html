@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Error</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 100vh;
+        background: linear-gradient(135deg, #e60000 0%, #002b7f 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-family: "Orbitron", sans-serif;
+        color: #fff;
+        text-align: center;
+        overflow: hidden;
+      }
+
+      .error-code {
+        font-size: 150px;
+        font-weight: 700;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+          0 0 20px rgba(255, 0, 0, 0.7), 0 0 40px rgba(255, 0, 0, 0.6),
+          0 0 80px rgba(0, 43, 127, 0.8);
+        animation: glow 2s infinite alternate;
+      }
+
+      @keyframes glow {
+        0% {
+          text-shadow: 0 0 10px rgba(255, 255, 255, 0.7),
+            0 0 20px rgba(255, 0, 0, 0.7), 0 0 40px rgba(0, 43, 127, 0.8);
+          transform: scale(1);
+        }
+        100% {
+          text-shadow: 0 0 20px rgba(255, 255, 255, 1),
+            0 0 40px rgba(255, 0, 0, 1), 0 0 80px rgba(0, 43, 127, 1);
+          transform: scale(1.05);
+        }
+      }
+
+      .error-message {
+        font-size: 24px;
+        margin-top: 15px;
+        font-weight: 600;
+        letter-spacing: 1px;
+      }
+
+      .error-sub {
+        margin-top: 10px;
+        font-size: 16px;
+        color: #f0f0f0;
+      }
+
+      a {
+        text-decoration: none;
+        color: white;
+        background: #0056b3;
+        padding: 12px 25px;
+        border-radius: 8px;
+        margin-top: 30px;
+        display: inline-block;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+
+      a:hover {
+        background: #003f7f;
+        transform: scale(1.05);
+      }
+
+      footer {
+        position: absolute;
+        bottom: 10px;
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.8);
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="error-code">404</div>
+    <div class="error-message">Lost Internet Connection or Page Not Found</div>
+    <div class="error-sub">
+      Please check your connection or return to the homepage.
+    </div>
+    <a href="index.html">Return to Home</a>
+
+    <footer>&copy; 2025 Metrone Bank. All rights reserved.</footer>
+  </body>
+</html>

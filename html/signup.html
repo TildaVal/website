@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Metrone Bank - Sign Up</title>
+    <link
+      rel="shortcut icon"
+      href="/images/apple-icon.png"
+      type="image/x-icon"
+    />
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        background: linear-gradient(to right, #0047ab, #ff0000);
+        color: #222;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .container {
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        width: 400px;
+        padding: 30px;
+        transition: all 0.5s ease-in-out;
+      }
+
+      h2 {
+        text-align: center;
+        color: #0047ab;
+        margin-bottom: 20px;
+      }
+
+      label {
+        font-weight: bold;
+        display: block;
+        margin-top: 10px;
+        color: #333;
+      }
+
+      input,
+      select {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        outline: none;
+        transition: border-color 0.3s;
+      }
+
+      input:focus,
+      select:focus {
+        border-color: #0047ab;
+      }
+
+      button {
+        width: 100%;
+        padding: 12px;
+        background-color: red;
+        color: white;
+        border: none;
+        border-radius: 25px;
+        margin-top: 20px;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      button:hover {
+        background-color: #b30000;
+      }
+
+      .success-page {
+        display: none;
+        text-align: center;
+      }
+
+      .success-page h2 {
+        color: #0047ab;
+      }
+
+      .success-icon {
+        font-size: 60px;
+        color: green;
+      }
+
+      .account-details {
+        background: #f7f7f7;
+        border-radius: 10px;
+        padding: 15px;
+        margin-top: 20px;
+        text-align: left;
+      }
+
+      .account-details strong {
+        color: #0047ab;
+      }
+
+      .links {
+        margin-top: 15px;
+        font-size: 0.9rem;
+      }
+
+      .links a {
+        color: #0047ab;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .links a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" id="formContainer">
+      <form id="signupForm">
+        <h2>Open a New Bank Account</h2>
+
+        <label for="fullname">Full Name</label>
+        <input type="text" id="fullname" required />
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" required />
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" required />
+
+        <label for="accountType">Account Type</label>
+        <select id="accountType" required>
+          <option value="">Select Type</option>
+          <option value="Savings">Savings</option>
+          <option value="Current">Current</option>
+          <option value="Student">Business</option>
+          <option value="Student">Crypto Account</option>
+        </select>
+
+        <label for="password">Create Password</label>
+        <input type="password" id="password" required minlength="6" />
+
+        <button type="submit">Create Account</button>
+      </form>
+
+      <div class="links">
+        <p>Already have an account? <a href="login.html">Login</a></p>
+      </div>
+
+      <!-- Next page (success) -->
+      <div class="success-page" id="successPage">
+        <div class="success-icon">✅</div>
+        <h2>Welcome to Metrone Bank!</h2>
+        <p>Your account has been created successfully.</p>
+        <div class="account-details" id="accountDetails"></div>
+        <button onclick="goToDashboard()">Go to Dashboard</button>
+      </div>
+    </div>
+
+    <script>
+      const form = document.getElementById("signupForm");
+      const formContainer = document.getElementById("formContainer");
+      const successPage = document.getElementById("successPage");
+      const accountDetails = document.getElementById("accountDetails");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        // Collect form data
+        const name = document.getElementById("fullname").value;
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value;
+        const accountType = document.getElementById("accountType").value;
+
+        // Generate a fake account number
+        const accountNumber =
+          "MET" + Math.floor(10000000 + Math.random() * 90000000);
+
+        // Prepare full user data for dashboard
+        const user = {
+          name,
+          email,
+          phone,
+          accountType,
+          accountNumber,
+          balance: 0,
+          lastLogin: new Date().toLocaleString(),
+          lastTransaction: "No transactions yet",
+        };
+
+        // Save user to localStorage
+        localStorage.setItem("MetroneUser", JSON.stringify(user));
+
+        // Show next page (success)
+        form.style.display = "none";
+        successPage.style.display = "block";
+
+        accountDetails.innerHTML = `
+        <p><strong>Account Holder:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
+        <p><strong>Account Type:</strong> ${accountType}</p>
+        <p><strong>Account Number:</strong> ${accountNumber}</p>
+      `;
+      });
+
+      function goToDashboard() {
+        alert("Redirecting to your dashboard...");
+        window.location.href = "dashboard.html"; // 👈 redirects properly now
+      }
+    </script>
+  </body>
+</html>
